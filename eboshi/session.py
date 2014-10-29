@@ -10,7 +10,7 @@ class Session:
         self.username = username
         self.password = password
 
-    def login(self):
+    def get_session_id(self):
         params = {"action":"login"}
         params["username"] = self.username
         params["password"] = self.password

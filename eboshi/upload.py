@@ -28,7 +28,7 @@ class Upload(Command):
         username = parsed_args.username
         password = parsed_args.password
         session = Session(url, username, password)
-        session_id = session.login()
+        session_id = session.get_session_id()
 
         project = parsed_args.project
         filename = parsed_args.filename
