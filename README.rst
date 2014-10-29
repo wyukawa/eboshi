@@ -12,7 +12,7 @@ Usage
 ----------
 
 * upload azkaban job zip file
- * usage example
-  * ``eboshi upload --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --filename azkaban_job.zip``
+
+  ``eboshi upload --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --filename azkaban_job.zip``
 
 
