@@ -49,4 +49,4 @@ class Schedule(Command):
         if jc.get("status") == 'success':
             print("schedule succeeded. message=%s" % (jc["message"]))
         if jc.get("status") == 'error':
-            raise Exception("schedule failed. message=%s" % (jc["message"]))
+            raise Exception("schedule failed. message=%s. error=%s" % (jc["message"], jc["error"]))
