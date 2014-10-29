@@ -40,6 +40,6 @@ class Upload(Command):
         jc = r.json()
         
         if jc.get("error") is None:
-            print "upload successful"
+            print "upload succeeded."
         else:
             raise Exception("upload failed. error=%s" % (jc["error"]))
