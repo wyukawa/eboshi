@@ -31,6 +31,7 @@ setup(
         ],
         'eboshi': [
             'upload = eboshi.upload:Upload',
+            'schedule = eboshi.schedule:Schedule',
         ]
     },
 )
