@@ -9,6 +9,7 @@ import requests
 import os.path
 from eboshi.session import Session
 from eboshi.project import Project
+from ast import literal_eval
 
 class Schedule(Command):
     "schedule azkaban job"
@@ -22,6 +23,10 @@ class Schedule(Command):
         parser.add_argument('--password', required=True)
         parser.add_argument('--project', required=True)
         parser.add_argument('--flow', required=True)
+        parser.add_argument('--date', required=True, help='Date of the first run (for example, 08/07/2014).')
+        parser.add_argument('--time', required=True, help='Time of the schedule (for example, 10,30,AM,JST).')
+        parser.add_argument('--period', required=True, help='Frequency to repeat. Consists of a number and a unit(for example, 1h, 1d, 1m). If not specified the flow will be run only once.')
+        parser.add_argument('--option', help='for example,{"failureAction":"finishPossible"}')
         return parser
 
     def take_action(self, parsed_args):
@@ -39,11 +44,13 @@ class Schedule(Command):
         params["projectName"] = project
         params["projectId"] = project_id
         params["flow"] = flow
-        params["scheduleDate"] = "10/28/2014"
-        params["scheduleTime"] = "14,53,PM,JST"
-        params["is_recurring"] = "on"
-        params["period"] = "1d"
-        params["failureAction"] = "finishPossible"
+        params["scheduleDate"] = parsed_args.date
+        params["scheduleTime"] = parsed_args.time
+        if parsed_args.period:
+            params["is_recurring"] = 'on'
+            params["period"] = parsed_args.period
+        if parsed_args.option:
+            params.update(literal_eval(parsed_args.option))
         r = requests.post(url + "/schedule", data=params)
         jc = r.json()
         if jc.get("status") == 'success':
