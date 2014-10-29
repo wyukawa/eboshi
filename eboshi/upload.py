@@ -7,7 +7,7 @@ from cliff.command import Command
 
 import requests
 import os.path
-from azkabancli.session import Session
+from eboshi.session import Session
 
 class Upload(Command):
     "upload azkaban job zip file"
