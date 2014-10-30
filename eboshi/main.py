@@ -15,7 +15,7 @@ class Eboshi(App):
     def __init__(self):
         super(Eboshi, self).__init__(
             description='Azkaban CLI',
-            version='0.0.2',
+            version='0.0.4',
             command_manager=CommandManager('eboshi'),
             )
 
