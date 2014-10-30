@@ -7,7 +7,7 @@ setup(
     name='eboshi',
     version='0.0.2',
     description='Azkaban CLI tool',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
     author='wyukawa',
     author_email='wyukawa@gmail.com',
     url='https://github.com/wyukawa/eboshi',
