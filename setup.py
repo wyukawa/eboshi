@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='eboshi',
-    version='0.0.1',
+    version='0.0.2',
     description='Azkaban CLI tool',
     long_description=open('README.rst').read(),
     author='wyukawa',
@@ -32,6 +32,7 @@ setup(
         'eboshi': [
             'upload = eboshi.upload:Upload',
             'schedule = eboshi.schedule:Schedule',
+            'exec = eboshi.exec:Exec',
         ]
     },
 )
