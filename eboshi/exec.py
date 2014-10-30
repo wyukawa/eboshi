@@ -23,6 +23,15 @@ class Exec(Command):
         parser.add_argument('--password', required=True)
         parser.add_argument('--project', required=True)
         parser.add_argument('--flow', required=True)
+        parser.add_argument('--disabled')
+        parser.add_argument('--successEmails')
+        parser.add_argument('--failureEmails')
+        parser.add_argument('--successEmailsOverride')
+        parser.add_argument('--failureEmailsOverride')
+        parser.add_argument('--notifyFailureFirst')
+        parser.add_argument('--notifyFailureLast')
+        parser.add_argument('--failureAction')
+        parser.add_argument('--concurrentOption')
         return parser
 
     def take_action(self, parsed_args):
@@ -37,6 +46,15 @@ class Exec(Command):
         params["session.id"] = session_id
         params["project"] = project
         params["flow"] = flow
+        params["disabled"] = parsed_args.disabled
+        params["successEmails"] = parsed_args.successEmails
+        params["failureEmails"] = parsed_args.failureEmails
+        params["successEmailsOverride"] = parsed_args.successEmailsOverride
+        params["failureEmailsOverride"] = parsed_args.failureEmailsOverride
+        params["notifyFailureFirst"] = parsed_args.notifyFailureFirst
+        params["notifyFailureLast"] = parsed_args.notifyFailureLast
+        params["failureAction"] = parsed_args.failureAction
+        params["concurrentOption"] = parsed_args.concurrentOption
         r = requests.get(url + "/executor", params=params)
         jc = r.json()
         if jc.get("execid") is None:

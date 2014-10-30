@@ -21,4 +21,4 @@ Usage
 
 * exec azkaban job flow
 
-  ``eboshi exec --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow``
+  ``eboshi exec --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --disabled '["aaa","bbb"]'``
