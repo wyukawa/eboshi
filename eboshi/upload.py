@@ -42,4 +42,4 @@ class Upload(Command):
         if jc.get("error") is None:
             print "upload succeeded."
         else:
-            raise Exception("upload failed. error=%s" % (jc["error"]))
+            raise Exception("upload failed. error=%s" % (jc.get("error")))

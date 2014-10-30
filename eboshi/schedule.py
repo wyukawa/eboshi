@@ -54,6 +54,6 @@ class Schedule(Command):
         r = requests.post(url + "/schedule", data=params)
         jc = r.json()
         if jc.get("status") == 'success':
-            print("schedule succeeded. message=%s" % (jc["message"]))
+            print("schedule succeeded. message=%s" % (jc.get("message")))
         if jc.get("status") == 'error':
-            raise Exception("schedule failed. message=%s. error=%s" % (jc["message"], jc["error"]))
+            raise Exception("schedule failed. message=%s. error=%s" % (jc.get("message"), jc.get("error")))
