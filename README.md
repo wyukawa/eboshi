@@ -10,8 +10,8 @@ ebosi requests Azkaban API.
 Python 2.7
 
 ##Required Python Libraries
-* cliff
 * requests
+* cliff
 
 ##Install
 ```
@@ -50,7 +50,6 @@ usage: eboshi upload [-h] --url URL --username USERNAME --password PASSWORD
                      --project PROJECT --filename FILENAME
 eboshi upload: error: argument --url is required
 ```
-example
 ```
 eboshi upload --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --filename azkaban_job.zip
 ```
@@ -63,7 +62,6 @@ usage: eboshi schedule [-h] --url URL --username USERNAME --password PASSWORD
                        --period PERIOD [--option OPTION]
 eboshi schedule: error: argument --url is required
 ```
-example
 ```
 eboshi schedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --date '08/07/2014' --time '10,30,AM,JST' --period 1d --option '{"failureAction":"finishPossible"}'
 ```
@@ -83,7 +81,6 @@ usage: eboshi exec [-h] --url URL --username USERNAME --password PASSWORD
                    [--concurrentOption CONCURRENTOPTION]
 eboshi exec: error: argument --url is required
 ```
-example
 ```
 eboshi exec --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --disabled '["aaa","bbb"]'
 ```
