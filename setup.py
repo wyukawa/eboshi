@@ -32,6 +32,7 @@ setup(
         'eboshi': [
             'upload = eboshi.upload:Upload',
             'addschedule = eboshi.add_schedule:Add_Schedule',
+            'listschedules = eboshi.list_schedules:List_Schedules',
             'exec = eboshi.exec:Exec',
         ]
     },
