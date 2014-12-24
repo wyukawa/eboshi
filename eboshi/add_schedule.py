@@ -11,13 +11,13 @@ from eboshi.session import Session
 from eboshi.project import Project
 from ast import literal_eval
 
-class Schedule(Command):
-    "schedule azkaban job"
+class Add_Schedule(Command):
+    "add schedule azkaban job"
 
     log = logging.getLogger(__name__)
 
     def get_parser(self, prog_name):
-        parser = super(Schedule, self).get_parser(prog_name)
+        parser = super(Add_Schedule, self).get_parser(prog_name)
         parser.add_argument('--url', required=True)
         parser.add_argument('--username', required=True)
         parser.add_argument('--password', required=True)
@@ -54,6 +54,6 @@ class Schedule(Command):
         r = requests.post(url + "/schedule", data=params)
         jc = r.json()
         if jc.get("status") == 'success':
-            print("schedule succeeded. message=%s" % (jc.get("message")))
+            print("add schedule succeeded. message=%s" % (jc.get("message")))
         if jc.get("status") == 'error':
-            raise Exception("schedule failed. message=%s. error=%s" % (jc.get("message"), jc.get("error")))
+            raise Exception("add schedule failed. message=%s. error=%s" % (jc.get("message"), jc.get("error")))
