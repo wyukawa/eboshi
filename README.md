@@ -36,10 +36,13 @@ optional arguments:
   --debug              show tracebacks on errors
 
 Commands:
+  addSchedule    add schedule azkaban job
   complete       print bash completion command
-  exec           schedule azkaban job
+  exec           exec azkaban job
   help           print detailed help for another command
-  schedule       schedule azkaban job
+  listSchedules  list schedules azkaban job
+  removeAllSchedules  remove all schedules azkaban job
+  removeSchedule  remove schedule azkaban job
   upload         upload azkaban job zip file
 ```
 
@@ -54,16 +57,49 @@ eboshi upload: error: argument --url is required
 eboshi upload --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --filename azkaban_job.zip
 ```
 
-* scheducle azkaban job
+* add schedule azkaban job
 ```
 $ eboshi schedule
-usage: eboshi schedule [-h] --url URL --username USERNAME --password PASSWORD
-                       --project PROJECT --flow FLOW --date DATE --time TIME
-                       --period PERIOD [--option OPTION]
-eboshi schedule: error: argument --url is required
+usage: eboshi addSchedule [-h] --url URL --username USERNAME --password
+                          PASSWORD --project PROJECT --flow FLOW --date DATE
+                          --time TIME --period PERIOD [--option OPTION]
+eboshi addSchedule: error: argument --url is required
 ```
 ```
-eboshi schedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --date '08/07/2014' --time '10,30,AM,JST' --period 1d --option '{"failureAction":"finishPossible"}'
+eboshi addSchedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --date '08/07/2014' --time '10,30,AM,JST' --period 1d --option '{"failureAction":"finishPossible"}'
+```
+
+* list schedules azkaban job
+```
+$ eboshi listSchedules
+usage: eboshi listSchedules [-h] --url URL --username USERNAME --password
+                            PASSWORD
+eboshi listSchedules: error: argument --url is required
+```
+```
+eboshi listSchedules --url http://localhost:8081 --username azkaban --password azkaban
+```
+
+* remove all schedules azkaban job
+```
+$ eboshi removeAllSchedules
+usage: eboshi removeAllSchedules [-h] --url URL --username USERNAME --password
+                                 PASSWORD
+eboshi removeAllSchedules: error: argument --url is required
+```
+```
+eboshi removeAllSchedules --url http://localhost:8081 --username azkaban --password azkaban
+```
+
+* remove schedule azkaban job
+```
+$ eboshi removeSchedule
+usage: eboshi removeSchedule [-h] --url URL --username USERNAME --password
+                             PASSWORD --scheduleId SCHEDULEID
+eboshi removeSchedule: error: argument --url is required
+```
+```
+eboshi removeSchedule --url http://localhost:8081 --username azkaban --password azkaban scheduleId 1
 ```
 
 * exec azkaban job flow
