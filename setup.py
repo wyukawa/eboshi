@@ -33,6 +33,7 @@ setup(
             'upload = eboshi.upload:Upload',
             'addschedule = eboshi.add_schedule:Add_Schedule',
             'listschedules = eboshi.list_schedules:List_Schedules',
+            'removeschedule = eboshi.remove_schedule:Remove_Schedule',
             'exec = eboshi.exec:Exec',
         ]
     },

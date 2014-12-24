@@ -19,3 +19,16 @@ class Schedule:
         r = requests.get(self.url + "/schedule", params=params)
         jc = r.json()
         return jc.get("items", []) 
+
+    def remove_schedule(self, scheduleId):
+        session = Session(self.url, self.username, self.password)
+        session_id = session.get_session_id()
+        params = {"action":"removeSched"}
+        params["session.id"] = session_id
+        params["scheduleId"] = scheduleId
+        r = requests.post(self.url + "/schedule", data=params)
+        jc = r.json()
+        if jc.get("status") == 'success':
+            print("remove schedule succeeded. message=%s" % (jc.get("message")))
+        if jc.get("status") == 'error':
+            raise Exception("remove schedule failed. message=%s" % (jc.get("message")))
