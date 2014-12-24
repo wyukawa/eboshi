@@ -9,10 +9,9 @@ import requests
 import os.path
 from eboshi.session import Session
 from eboshi.project import Project
-from ast import literal_eval
 
 class Exec(Command):
-    "schedule azkaban job"
+    "exec azkaban job"
 
     log = logging.getLogger(__name__)
 

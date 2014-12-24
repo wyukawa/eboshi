@@ -9,7 +9,7 @@ import requests
 from eboshi.schedule import Schedule
 
 class Remove_Schedule(Command):
-    "remove schedules azkaban job"
+    "remove schedule azkaban job"
 
     log = logging.getLogger(__name__)
 

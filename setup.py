@@ -31,10 +31,10 @@ setup(
         ],
         'eboshi': [
             'upload = eboshi.upload:Upload',
-            'addschedule = eboshi.add_schedule:Add_Schedule',
-            'listschedules = eboshi.list_schedules:List_Schedules',
-            'removeschedule = eboshi.remove_schedule:Remove_Schedule',
-            'removeallschedules = eboshi.remove_all_schedules:Remove_All_Schedules',
+            'addSchedule = eboshi.add_schedule:Add_Schedule',
+            'listSchedules = eboshi.list_schedules:List_Schedules',
+            'removeSchedule = eboshi.remove_schedule:Remove_Schedule',
+            'removeAllSchedules = eboshi.remove_all_schedules:Remove_All_Schedules',
             'exec = eboshi.exec:Exec',
         ]
     },
