@@ -6,7 +6,6 @@ import logging
 from cliff.command import Command
 
 import requests
-import os.path
 from eboshi.session import Session
 
 class Create_Project(Command):
