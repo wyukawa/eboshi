@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='eboshi',
-    version='0.0.5',
+    version='0.0.6',
     description='Azkaban CLI tool',
     long_description=open('README.md').read(),
     author='wyukawa',
@@ -36,6 +36,7 @@ setup(
             'removeSchedule = eboshi.remove_schedule:Remove_Schedule',
             'removeAllSchedules = eboshi.remove_all_schedules:Remove_All_Schedules',
             'exec = eboshi.exec:Exec',
+            'createProject = eboshi.create_project:Create_Project',
         ]
     },
 )

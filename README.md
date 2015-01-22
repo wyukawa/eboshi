@@ -38,12 +38,25 @@ optional arguments:
 Commands:
   addSchedule    add schedule azkaban job
   complete       print bash completion command
+  createProject  create azkaban project
   exec           exec azkaban job
   help           print detailed help for another command
   listSchedules  list schedules azkaban job
   removeAllSchedules  remove all schedules azkaban job
   removeSchedule  remove schedule azkaban job
   upload         upload azkaban job zip file
+```
+
+* create azkaban project
+```
+$ eboshi createProject
+usage: eboshi createProject [-h] --url URL --username USERNAME --password
+PASSWORD --project PROJECT --description
+DESCRIPTION
+eboshi createProject: error: argument --url is required
+```
+```
+eboshi upload --url http://localhost:8081 --username azkaban --password azkaban --project test --description test
 ```
 
 * upload azkaban job zip file
