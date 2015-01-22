@@ -39,6 +39,7 @@ Commands:
   addSchedule    add schedule azkaban job
   complete       print bash completion command
   createProject  create azkaban project
+  deleteProject  delete azkaban project
   exec           exec azkaban job
   help           print detailed help for another command
   listSchedules  list schedules azkaban job
@@ -56,7 +57,18 @@ DESCRIPTION
 eboshi createProject: error: argument --url is required
 ```
 ```
-eboshi upload --url http://localhost:8081 --username azkaban --password azkaban --project test --description test
+eboshi createProject --url http://localhost:8081 --username azkaban --password azkaban --project test --description test
+```
+
+* delete azkaban project
+```
+$ eboshi deleteProject
+usage: eboshi deleteProject [-h] --url URL --username USERNAME --password
+                            PASSWORD --project PROJECT
+eboshi deleteProject: error: argument --url is required
+```
+```
+eboshi deleteProject --url http://localhost:8081 --username azkaban --password azkaban --project testt
 ```
 
 * upload azkaban job zip file

@@ -37,6 +37,7 @@ setup(
             'removeAllSchedules = eboshi.remove_all_schedules:Remove_All_Schedules',
             'exec = eboshi.exec:Exec',
             'createProject = eboshi.create_project:Create_Project',
+            'deleteProject = eboshi.delete_project:Delete_Project',
         ]
     },
 )
