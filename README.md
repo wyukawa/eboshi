@@ -124,15 +124,16 @@ usage: eboshi removeSchedule [-h] --url URL --username USERNAME --password
 eboshi removeSchedule: error: argument --url is required
 ```
 ```
-eboshi removeSchedule --url http://localhost:8081 --username azkaban --password azkaban scheduleId 1
+eboshi removeSchedule --url http://localhost:8081 --username azkaban --password azkaban --scheduleId 1
 ```
 
 * exec azkaban job flow
 ```
 $ eboshi exec
 usage: eboshi exec [-h] --url URL --username USERNAME --password PASSWORD
-                   --project PROJECT --flow FLOW [--disabled DISABLED]
-                   [--successEmails SUCCESSEMAILS]
+                   --project PROJECT --flow FLOW
+                   [--flowOverride [FLOWOVERRIDE [FLOWOVERRIDE ...]]]
+                   [--disabled DISABLED] [--successEmails SUCCESSEMAILS]
                    [--failureEmails FAILUREEMAILS]
                    [--successEmailsOverride SUCCESSEMAILSOVERRIDE]
                    [--failureEmailsOverride FAILUREEMAILSOVERRIDE]
@@ -143,5 +144,5 @@ usage: eboshi exec [-h] --url URL --username USERNAME --password PASSWORD
 eboshi exec: error: argument --url is required
 ```
 ```
-eboshi exec --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --disabled '["aaa","bbb"]'
+eboshi exec --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --flowOverride k1=v1 k2=v2 --disabled '["aaa","bbb"]'
 ```
