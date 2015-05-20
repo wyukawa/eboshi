@@ -22,6 +22,7 @@ class Exec(Command):
         parser.add_argument('--password', required=True)
         parser.add_argument('--project', required=True)
         parser.add_argument('--flow', required=True)
+        parser.add_argument('--flowOverride', nargs='*', default=[])
         parser.add_argument('--disabled')
         parser.add_argument('--successEmails')
         parser.add_argument('--failureEmails')
@@ -54,6 +55,11 @@ class Exec(Command):
         params["notifyFailureLast"] = parsed_args.notifyFailureLast
         params["failureAction"] = parsed_args.failureAction
         params["concurrentOption"] = parsed_args.concurrentOption
+
+        for item in parsed_args.flowOverride:
+            pair = item.split("=")
+            params["flowOverride[%s]" % pair[0]] = pair[1]
+
         r = requests.get(url + "/executor", params=params)
         jc = r.json()
         if jc.get("execid") is None:
