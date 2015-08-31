@@ -55,5 +55,7 @@ class Add_Schedule(Command):
         jc = r.json()
         if jc.get("status") == 'success':
             print("add schedule succeeded. message=%s" % (jc.get("message")))
-        if jc.get("status") == 'error':
+        elif jc.get("status") == 'error':
             raise Exception("add schedule failed. message=%s. error=%s" % (jc.get("message"), jc.get("error")))
+        else:
+            raise Exception("add schedule failed. error=%s" % (jc.get("error")))
