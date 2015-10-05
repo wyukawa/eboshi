@@ -12,6 +12,8 @@ class Eboshi(App):
 
     log = logging.getLogger(__name__)
 
+    logging.getLogger("requests").setLevel(logging.WARNING)
+
     def __init__(self):
         super(Eboshi, self).__init__(
             description='Azkaban CLI',
