@@ -30,4 +30,6 @@ class Get_Schedule(Command):
         flow = parsed_args.flow
         schedule = Schedule(url, username, password)
         sc = schedule.get_schedule(project, flow)
+        if sc is None:
+            raise Exception("no such shedule")
         print "firstSchedTime:%s, submitUser:%s, period:%s, scheduleId:%s, nextExecTime:%s" % (sc["firstSchedTime"], sc["submitUser"], sc["period"], sc["scheduleId"], sc["nextExecTime"])
