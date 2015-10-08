@@ -31,9 +31,9 @@ optional arguments:
   --version            show program's version number and exit
   -v, --verbose        Increase verbosity of output. Can be repeated.
   --log-file LOG_FILE  Specify a file to log output. Disabled by default.
-  -q, --quiet          suppress output except warnings and errors
-  -h, --help           show this help message and exit
-  --debug              show tracebacks on errors
+  -q, --quiet          Suppress output except warnings and errors.
+  -h, --help           Show this help message and exit.
+  --debug              Show tracebacks on errors.
 
 Commands:
   addSchedule    add schedule azkaban job
@@ -41,6 +41,8 @@ Commands:
   createProject  create azkaban project
   deleteProject  delete azkaban project
   exec           exec azkaban job
+  getMostRecentNextExecTime  get most recent next exec time
+  getSchedule    get schedule azkaban job
   help           print detailed help for another command
   listSchedules  list schedules azkaban job
   removeAllSchedules  remove all schedules azkaban job
@@ -156,4 +158,15 @@ eboshi getSchedule: error: argument --url is required
 ```
 ```
 eboshi getSchedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow
+```
+
+* get most recent next exec time
+```
+$ eboshi getMostRecentNextExecTime
+usage: eboshi getMostRecentNextExecTime [-h] --url URL --username USERNAME
+                                        --password PASSWORD
+eboshi getMostRecentNextExecTime: error: argument --url is required
+```
+```
+eboshi getMostRecentNextExecTime --url http://localhost:8081 --username azkaban --password azkaban
 ```
