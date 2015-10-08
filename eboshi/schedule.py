@@ -3,6 +3,7 @@
 
 import requests
 from eboshi.session import Session
+from eboshi.project import Project
 
 class Schedule:
 
@@ -38,3 +39,16 @@ class Schedule:
         for item in items:
             scheduleid = item["scheduleid"]
             self.remove_schedule(scheduleid)
+
+    def get_schedule(self, project, flow):
+        session = Session(self.url, self.username, self.password)
+        session_id = session.get_session_id()
+        params = {"ajax":"fetchSchedule"}
+        params["session.id"] = session_id
+        p = Project()
+        project_id = p.get_project_id(self.url, session_id, project)
+        params["projectId"] = project_id
+        params["flowId"] = flow
+        r = requests.get(self.url + "/schedule", params=params)
+        jc = r.json()
+        return jc.get("schedule") 

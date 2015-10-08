@@ -38,6 +38,7 @@ setup(
             'exec = eboshi.exec:Exec',
             'createProject = eboshi.create_project:Create_Project',
             'deleteProject = eboshi.delete_project:Delete_Project',
+            'getSchedule = eboshi.get_schedule:Get_Schedule',
         ]
     },
 )

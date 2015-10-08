@@ -146,3 +146,14 @@ eboshi exec: error: argument --url is required
 ```
 eboshi exec --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --flowOverride k1=v1 k2=v2 --disabled '["aaa","bbb"]'
 ```
+
+* get schedule azkaban job
+```
+$ eboshi getSchedule
+usage: eboshi getSchedule [-h] --url URL --username USERNAME --password
+                          PASSWORD --project PROJECT --flow FLOW
+eboshi getSchedule: error: argument --url is required
+```
+```
+eboshi getSchedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow
+```
