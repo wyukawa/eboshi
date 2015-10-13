@@ -37,4 +37,6 @@ class Get_Most_Recent_Next_Exec_Time(Command):
                 most_recent_next_exec_time = dt
             if most_recent_next_exec_time > dt:
                 most_recent_next_exec_time = dt
+        if most_recent_next_exec_time is None:
+            raise Exception("schedule is not found")
         print most_recent_next_exec_time.strftime("%Y-%m-%d %H:%M:%S")
