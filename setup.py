@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='eboshi',
-    version='0.0.11',
+    version='0.0.12',
     description='Azkaban CLI tool',
     long_description=open('README.md').read(),
     author='wyukawa',
