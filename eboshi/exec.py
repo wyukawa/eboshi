@@ -32,6 +32,7 @@ class Exec(Command):
         parser.add_argument('--notifyFailureLast')
         parser.add_argument('--failureAction')
         parser.add_argument('--concurrentOption')
+        parser.add_argument('--returnExecid', action='store_true')
         return parser
 
     def take_action(self, parsed_args):
@@ -42,6 +43,7 @@ class Exec(Command):
         session_id = session.get_session_id()
         project = parsed_args.project
         flow = parsed_args.flow
+        returnExecid = parsed_args.returnExecid
         params = {"ajax":"executeFlow"}
         params["session.id"] = session_id
         params["project"] = project
@@ -65,4 +67,7 @@ class Exec(Command):
         if jc.get("execid") is None:
             raise Exception("exec failed. project=%s. flow=%s. message=%s. error=%s" % (jc.get("project"), jc.get("flow"), jc.get("message"), jc.get("error")))
         else:
-            print "exec succeeded. execid=%s. project=%s. flow=%s. message=%s" % (jc.get("execid"), jc.get("project"), jc.get("flow"), jc.get("message"))
+            if returnExecid:
+                print jc.get("execid")
+            else:
+                print "exec succeeded. execid=%s. project=%s. flow=%s. message=%s" % (jc.get("execid"), jc.get("project"), jc.get("flow"), jc.get("message"))

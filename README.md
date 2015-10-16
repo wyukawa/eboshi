@@ -143,7 +143,7 @@ usage: eboshi exec [-h] --url URL --username USERNAME --password PASSWORD
                    [--notifyFailureFirst NOTIFYFAILUREFIRST]
                    [--notifyFailureLast NOTIFYFAILURELAST]
                    [--failureAction FAILUREACTION]
-                   [--concurrentOption CONCURRENTOPTION]
+                   [--concurrentOption CONCURRENTOPTION] [--returnExecid]
 eboshi exec: error: argument --url is required
 ```
 ```
