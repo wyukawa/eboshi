@@ -40,6 +40,7 @@ setup(
             'deleteProject = eboshi.delete_project:Delete_Project',
             'getSchedule = eboshi.get_schedule:Get_Schedule',
             'getMostRecentNextExecTime = eboshi.get_most_recent_next_exec_time:Get_Most_Recent_Next_Exec_Time',
+            'fetchFlow = eboshi.fetch_flow:Fetch_Flow',
         ]
     },
 )

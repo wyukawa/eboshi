@@ -41,6 +41,7 @@ Commands:
   createProject  create azkaban project
   deleteProject  delete azkaban project
   exec           exec azkaban job
+  fetchFlow      fetch flow azkaban job
   getMostRecentNextExecTime  get most recent next exec time
   getSchedule    get schedule azkaban job
   help           print detailed help for another command
@@ -169,4 +170,15 @@ eboshi getMostRecentNextExecTime: error: argument --url is required
 ```
 ```
 eboshi getMostRecentNextExecTime --url http://localhost:8081 --username azkaban --password azkaban
+```
+
+* fetch flow azkaban job
+```
+$ eboshi fetchFlow
+usage: eboshi fetchFlow [-h] --url URL --username USERNAME --password PASSWORD
+                        --execid EXECID
+eboshi fetchFlow: error: argument --url is required
+```
+```
+eboshi fetchFlow --url http://localhost:8081 --username azkaban --password azkaban --execid 100
 ```
