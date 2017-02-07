@@ -36,6 +36,7 @@ optional arguments:
   --debug              Show tracebacks on errors.
 
 Commands:
+  addCronSchedule  add cron schedule azkaban job
   addSchedule    add schedule azkaban job
   complete       print bash completion command
   createProject  create azkaban project
@@ -87,7 +88,7 @@ eboshi upload --url http://localhost:8081 --username azkaban --password azkaban 
 
 * add schedule azkaban job
 ```
-$ eboshi schedule
+$ eboshi addSchedule
 usage: eboshi addSchedule [-h] --url URL --username USERNAME --password
                           PASSWORD --project PROJECT --flow FLOW --date DATE
                           --time TIME --period PERIOD [--option OPTION]
@@ -95,6 +96,18 @@ eboshi addSchedule: error: argument --url is required
 ```
 ```
 eboshi addSchedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --date '08/07/2014' --time '10,30,AM,JST' --period 1d --option '{"failureAction":"finishPossible"}'
+```
+
+* add cron schedule azkaban job
+```
+$ eboshi addCronSchedule
+usage: eboshi addCronSchedule [-h] --url URL --username USERNAME --password
+                              PASSWORD --project PROJECT --flow FLOW --cron
+                              CRON [--option OPTION]
+eboshi addCronSchedule: error: argument --url is required
+```
+```
+eboshi addCronSchedule --url http://localhost:8081 --username azkaban --password azkaban --project azkaban_project --flow azkaban_flow --cron '0 10 * * *' --option '{"failureAction":"finishPossible"}'
 ```
 
 * list schedules azkaban job
