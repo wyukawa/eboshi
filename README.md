@@ -1,4 +1,4 @@
-#eboshi
+# eboshi
 
 eboshi is Azkaban CLI tool
 
@@ -6,14 +6,14 @@ Azkaban provides API. see http://azkaban.github.io/azkaban/docs/2.5/#ajax-api
 
 ebosi requests Azkaban API.
 
-##Prerequisites
+## Prerequisites
 Python 2.7
 
-##Required Python Libraries
+## Required Python Libraries
 * requests
 * cliff
 
-##Install
+## Install
 ```
 pip install eboshi
 ```
