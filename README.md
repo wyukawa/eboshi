@@ -2,7 +2,7 @@
 
 eboshi is Azkaban CLI tool
 
-Azkaban provides API. see http://azkaban.github.io/azkaban/docs/2.5/#ajax-api
+Azkaban provides API. see http://azkaban.github.io/azkaban/docs/latest/#ajax-api
 
 ebosi requests Azkaban API.
 
