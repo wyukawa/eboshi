@@ -29,14 +29,10 @@ class List_Schedules(Command):
         for item in items:
             flowname = item["flowname"]
             scheduleid = item["scheduleid"]
-            stats = item["stats"]
-            max = stats["max"]
-            average = stats["average"]
-            min = stats["min"]
             projectname = item["projectname"]
+            cron = item.get("cron", "")
             period = item["period"]
-            length = item["length"]
             time = item["time"]
             history = item["history"]
-            print "flowname:%s, scheduleid:%s, max:%s, average:%s, min:%s, projectname:%s, period:%s, length:%s, time:%s, history:%s" % (flowname, scheduleid, max, average, min, projectname, period, length, time, history)
+            print "flowname:%s, scheduleid:%s, projectname:%s, cron:%s, period:%s, time:%s, history:%s" % (flowname, scheduleid, projectname, cron, period, time, history)
 
