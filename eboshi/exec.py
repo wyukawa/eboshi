@@ -64,6 +64,8 @@ class Exec(Command):
 
         r = requests.get(url + "/executor", params=params)
         jc = r.json()
+        if jc.get("error") is not None:
+            raise Exception("exec failed. error=%s" % (jc.get("error")))
         if jc.get("execid") is None:
             raise Exception("exec failed. project=%s. flow=%s. message=%s. error=%s" % (jc.get("project"), jc.get("flow"), jc.get("message"), jc.get("error")))
         else:
