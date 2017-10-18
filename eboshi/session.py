@@ -15,7 +15,7 @@ class Session:
         params["username"] = self.username
         params["password"] = self.password
         
-        r = requests.post(self.url, params=params)
+        r = requests.post(self.url, data=params)
         
         jc = r.json()
         if jc.get("status") is None:
