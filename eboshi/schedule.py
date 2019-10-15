@@ -37,8 +37,8 @@ class Schedule:
     def remove_all_schedules(self):
         items = self.list_schedules()
         for item in items:
-            scheduleid = item["scheduleid"]
-            self.remove_schedule(scheduleid)
+            scheduleId = item["scheduleId"]
+            self.remove_schedule(scheduleId)
 
     def get_schedule(self, project, flow):
         session = Session(self.url, self.username, self.password)
