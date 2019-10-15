@@ -19,7 +19,7 @@ class Schedule:
         params["session.id"] = session_id
         r = requests.get(self.url + "/schedule", params=params)
         jc = r.json()
-        return jc.get("items", [])
+        return jc.get("items", []) 
 
     def remove_schedule(self, scheduleId):
         session = Session(self.url, self.username, self.password)
@@ -51,4 +51,4 @@ class Schedule:
         params["flowId"] = flow
         r = requests.get(self.url + "/schedule", params=params)
         jc = r.json()
-        return jc.get("schedule")
+        return jc.get("schedule") 
