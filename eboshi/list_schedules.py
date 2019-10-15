@@ -28,11 +28,10 @@ class List_Schedules(Command):
         items = schedule.list_schedules()
         for item in items:
             flowname = item["flowname"]
-            scheduleid = item["scheduleid"]
+            scheduleId = item["scheduleId"]
             projectname = item["projectname"]
             cron = item.get("cron", "")
             period = item["period"]
             time = item["time"]
             history = item["history"]
-            print "flowname:%s, scheduleid:%s, projectname:%s, cron:%s, period:%s, time:%s, history:%s" % (flowname, scheduleid, projectname, cron, period, time, history)
-
+            print "flowname:%s, scheduleId:%s, projectname:%s, cron:%s, period:%s, time:%s, history:%s" % (flowname, scheduleId, projectname, cron, period, time, history)
